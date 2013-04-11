@@ -40,6 +40,8 @@ pushserve({port: 5555}, function() {
 Additionally, node.js API also adds `noLog` option with which
 default server start message won’t be printed.
 
+You can stop the server in node with `var server = pushserve(); server.close();`.
+
 ## License
 
 MIT
