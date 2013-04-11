@@ -15,6 +15,7 @@ var startServer = function(options, callback) {
   if (options.indexPath == null) options.indexPath = sysPath.join(options.path, 'index.html')
   if (options.noCors == null) options.noCors = false;
   if (options.noPushState == null) options.noPushState = false;
+  if (options.noLog == null) options.noLog = false;
   if (callback == null) callback = Function.prototype;
 
   var app = express();
@@ -41,7 +42,9 @@ var startServer = function(options, callback) {
   // Wrap express app with node.js server in order to have stuff like server.stop() etc.
   var server = http.createServer(app);
   server.listen(options.port, function(error) {
-    console.log('Serving HTTP on 0.0.0.0 port', options.port);
+    if (!noLog) {
+      console.log('Application started on http://localhost:' + options.port);
+    }
     callback(error, options);
   });
   return server;
