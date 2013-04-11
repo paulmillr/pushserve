@@ -1,0 +1,31 @@
+{
+  "name": "pushserve",
+  "version": "0.1.0",
+  "description": "Dead-simple pushState-enabled command-line http server.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/paulmillr/pushserve"
+  },
+  "keywords": [
+    "pushState",
+    "command",
+    "line",
+    "cli",
+    "html5",
+    "http",
+    "server",
+    "web",
+    "cors"
+  ],
+  "author": "Paul Miller (paulmillr.com)",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "gitHead": "99a78231e4bd47dc7e57b955b8bfb672e6f6f10c",
+  "dependencies": {
+    "express": "~3.1.1"
+  }
+}

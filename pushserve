@@ -1,0 +1,7 @@
+#!/usr/bin/env node
+
+var pushserve = require('./index.js');
+
+console.log(process.argv.slice(2));
+
+pushserve();
