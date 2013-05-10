@@ -1,6 +1,6 @@
 {
   "name": "pushserve",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Dead-simple pushState-enabled command-line http server.",
   "main": "index.js",
   "scripts": {
@@ -23,8 +23,9 @@
   ],
   "author": "Paul Miller (paulmillr.com)",
   "license": "MIT",
-  "readmeFilename": "README.md",
-  "gitHead": "99a78231e4bd47dc7e57b955b8bfb672e6f6f10c",
+  "bin": {
+    "pushserve": "./pushserve"
+  },
   "dependencies": {
     "express": "~3.1.1",
     "commander": "~1.1.1"
