@@ -1,3 +1,6 @@
+# pushserve 0.1.3 (10 May 2013)
+* Added binary.
+
 # pushserve 0.1.2 (19 April 2013)
 * Fixed launching
 

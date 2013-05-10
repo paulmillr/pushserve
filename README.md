@@ -6,7 +6,7 @@ Dead-simple node.js pushState-enabled command-line http server.
 
 * Install it with `npm`: `npm install -g pushserve`.
 * Launch: `pushserve`.
-* You may specify port (default is 8000): `pushserve --port 4567`.
+    * You may specify port (default is 8000): `pushserve --port 4567`.
 
 ```
   Usage: pushserve [options]
