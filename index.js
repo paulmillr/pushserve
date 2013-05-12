@@ -30,7 +30,7 @@ var startServer = function(options, callback) {
   }
 
   // Route all static files to http paths.
-  app.use(options.base, express.static(options.path));
+  app.use(options.base, express.static(sysPath.resolve(options.path)));
 
   // Route all non-existent files to `index.html`
   if (!options.noPushState) {
