@@ -1,3 +1,6 @@
+# pushserve 0.1.4 (12 May 2013)
+* Added auto-resolving of all static files. Should fix some bugs.
+
 # pushserve 0.1.3 (10 May 2013)
 * Added binary.
 
