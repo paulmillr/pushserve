@@ -1,3 +1,7 @@
+# pushserve 0.1.5 (28 June 2013)
+* Added `stripSlashes` option that provides auto-redirection
+  for some paths.
+
 # pushserve 0.1.4 (12 May 2013)
 * Added auto-resolving of all static files. Should fix some bugs.
 

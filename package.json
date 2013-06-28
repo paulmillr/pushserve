@@ -1,6 +1,6 @@
 {
   "name": "pushserve",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Dead-simple pushState-enabled command-line http server.",
   "main": "index.js",
   "scripts": {
