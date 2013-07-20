@@ -1,3 +1,6 @@
+# pushserve 0.1.6 (20 July 2013)
+* Updated `commander` dependency.
+
 # pushserve 0.1.5 (28 June 2013)
 * Added `stripSlashes` option that provides auto-redirection
   for some paths.
