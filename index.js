@@ -48,7 +48,7 @@ var startServer = function(options, callback) {
 
   // Wrap express app with node.js server in order to have stuff like server.stop() etc.
   var server = http.createServer(app);
-  server.timeout = 2000;
+  server.timeout = (options.timeout == null) ? 120000 : options.timeout;
   server.listen(options.port, function(error) {
     if (!options.noLog) {
       console.log('Application started on http://localhost:' + options.port);
