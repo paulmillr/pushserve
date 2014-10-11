@@ -48,6 +48,12 @@ var startServer = function(options, callback) {
 
   // Wrap express app with node.js server in order to have stuff like server.stop() etc.
   var server = http.createServer(app);
+  server.on('error', function (e) {
+    if (e.code == 'EADDRINUSE') {
+      console.log('ERROR: Another process already listening on http://localhost:' + options.port);
+      process.exit();
+    }
+  });
   server.timeout = 2000;
   server.listen(options.port, function(error) {
     if (!options.noLog) {
