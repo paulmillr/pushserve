@@ -12,6 +12,7 @@ var startServer = function(options, callback) {
   if (options == null) options = {};
   if (options.path == null) options.path = '.';
   if (options.port == null) options.port = 8000;
+  if (options.hostname == null) options.hostname = 'localhost';
   if (options.base == null) options.base = '';
   if (options.indexPath == null) options.indexPath = sysPath.join(options.path, 'index.html')
   if (options.noCors == null) options.noCors = false;
@@ -20,6 +21,7 @@ var startServer = function(options, callback) {
   if (options.noLog == null) options.noLog = false;
   if (callback == null) callback = Function.prototype;
 
+  var address = 'http://' + options.hostname + ':' + options.port;
   var app = express();
 
   // Send cross-origin resource sharing enabling header.
@@ -50,14 +52,14 @@ var startServer = function(options, callback) {
   var server = http.createServer(app);
   server.on('error', function (e) {
     if (e.code == 'EADDRINUSE') {
-      console.log('ERROR: Another process already listening on http://localhost:' + options.port);
+      console.log('ERROR: Another process already listening on ' + address);
       process.exit();
     }
   });
   server.timeout = 2000;
-  server.listen(options.port, function(error) {
+  server.listen(options.port, options.hostname, function(error) {
     if (!options.noLog) {
-      console.log('Application started on http://localhost:' + options.port);
+      console.log('Application started on ' + address);
     }
     callback(error, options);
   });
