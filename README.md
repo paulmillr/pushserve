@@ -13,13 +13,14 @@ Dead-simple node.js pushState-enabled command-line http server.
 
   Options:
 
-    -h, --help              output usage information
-    -V, --version           output the version number
-    -p, --port <port>       Web server port [8000]
-    -P, --path <path>       Path [.]
-    -i, --indexPath <path>  Path to file which to which 404s will be redirected [index.html]
-    -c, --noCors            Disable cross-origin resource sharing
-    -s, --noPushstate       Disable pushState
+    -h, --help                 output usage information
+    -V, --version              output the version number
+    -H, --hostname <hostname>  Web server hostname [localhost]
+    -p, --port <port>          Web server port [8000]
+    -P, --path <path>          Path [.]
+    -i, --indexPath <path>     Path to file which to which 404s will be redirected [index.html]
+    -c, --noCors               Disable cross-origin resource sharing
+    -s, --noPushstate          Disable pushState
 ```
 
 Node.js API:
