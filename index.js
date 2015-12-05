@@ -15,13 +15,15 @@ var startServer = function(options, callback) {
   if (options.port == null) options.port = 8000;
   if (options.hostname == null) options.hostname = 'localhost';
   if (options.base == null) options.base = '';
-  if (options.indexPath == null) options.indexPath = sysPath.join(options.path, 'index.html')
+  if (options.indexPath == null) options.indexPath = 'index.html';
   if (options.noCors == null) options.noCors = false;
   if (options.stripSlashes == null) options.stripSlashes = false;
   if (options.noPushState == null) options.noPushState = false;
   if (options.noLog == null) options.noLog = false;
   if (callback == null) callback = Function.prototype;
 
+  var rootPath = sysPath.resolve(options.path);
+  var sendFileOptions = {root: rootPath};
   var address = 'http://' + options.hostname + ':' + options.port;
   var app = express();
 
@@ -35,7 +37,7 @@ var startServer = function(options, callback) {
   }
 
   // Route all static files to http paths.
-  app.use(options.base, serveStatic(sysPath.resolve(options.path)));
+  app.use(options.base, serveStatic(rootPath));
 
   // Redirect requests that include a trailing slash.
   if (options.stripSlashes) {
@@ -45,7 +47,7 @@ var startServer = function(options, callback) {
   // Route all non-existent files to `index.html`
   if (!options.noPushState) {
     app.all('' + options.base + '/*', function(request, response) {
-      response.sendFile(options.indexPath);
+      response.sendFile(options.indexPath, sendFileOptions);
     });
   }
 
