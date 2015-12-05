@@ -2,6 +2,7 @@ var express = require('express');
 var http = require('http');
 var sysPath = require('path');
 var slashes = require('connect-slashes');
+var serveStatic = require('serve-static');
 
 var startServer = function(options, callback) {
   // Specify default options.
@@ -34,7 +35,7 @@ var startServer = function(options, callback) {
   }
 
   // Route all static files to http paths.
-  app.use(options.base, express.static(sysPath.resolve(options.path)));
+  app.use(options.base, serveStatic(sysPath.resolve(options.path)));
 
   // Redirect requests that include a trailing slash.
   if (options.stripSlashes) {
@@ -48,10 +49,10 @@ var startServer = function(options, callback) {
     });
   }
 
-  // Wrap express app with node.js server in order to have stuff like server.stop() etc.
+  // Wrap xpress app with node.js server in order to have stuff like server.stop() etc.
   var server = http.createServer(app);
   server.on('error', function (e) {
-    if (e.code == 'EADDRINUSE') {
+    if (e.code === 'EADDRINUSE') {
       console.log('ERROR: Another process already listening on ' + address);
       process.exit();
     }

@@ -27,8 +27,9 @@
     "pushserve": "./pushserve"
   },
   "dependencies": {
-    "express": "~3.3.0",
-    "commander": "~2.0.0",
-    "connect-slashes": "~0.0.9"
+    "commander": "^2.0.0",
+    "connect-slashes": "~1.3.1",
+    "express": "^4.0.0",
+    "serve-static": "^1.10.0"
   }
 }
