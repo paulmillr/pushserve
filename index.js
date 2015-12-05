@@ -45,7 +45,7 @@ var startServer = function(options, callback) {
   // Route all non-existent files to `index.html`
   if (!options.noPushState) {
     app.all('' + options.base + '/*', function(request, response) {
-      response.sendfile(options.indexPath);
+      response.sendFile(options.indexPath);
     });
   }
 
