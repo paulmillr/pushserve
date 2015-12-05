@@ -1,3 +1,6 @@
+# pushserve 1.0.0 (Dec 5, 2015)
+* Now using express v4.
+
 # pushserve 0.1.6 (20 July 2013)
 * Updated `commander` dependency.
 
