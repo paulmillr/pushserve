@@ -44,6 +44,11 @@ var startServer = function(options, callback) {
     app.use(slashes(false));
   }
 
+  // Route base requests to `options.indexPath`
+  app.all('/', function(request, response) {
+    response.sendFile(options.indexPath, sendFileOptions);
+  });
+
   // Route all non-existent files to `index.html`
   if (!options.noPushState) {
     app.all('' + options.base + '/*', function(request, response) {
