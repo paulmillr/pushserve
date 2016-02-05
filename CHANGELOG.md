@@ -1,3 +1,6 @@
+# pushserve 1.0.2 (Feb 5, 2016)
+* Fixed `indexPath` property when used with `noPushState`
+
 # pushserve 1.0.1 (Dec 5, 2015)
 * Now using express v4.
 
