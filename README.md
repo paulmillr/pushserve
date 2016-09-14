@@ -45,4 +45,4 @@ You can stop the server in node with `var server = pushserve(); server.close();`
 
 ## License
 
-[The MIT License](https://github.com/paulmillr/mit) (c) 2016 Paul Miller (http://paulmillr.com)
+[MIT](https://github.com/paulmillr/mit) (c) 2016 Paul Miller (http://paulmillr.com)
